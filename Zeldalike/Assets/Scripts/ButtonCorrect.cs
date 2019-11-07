@@ -6,9 +6,13 @@ public class ButtonCorrect : MonoBehaviour
 {
     public string value;
     public bool correct;
+    public AudioClip sfxClip;
+    public AudioSource sfxSource;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {  
+        sfxSource.clip = sfxClip;
 
     }
 
@@ -33,6 +37,7 @@ public class ButtonCorrect : MonoBehaviour
             //Debug.Log("You are the best coder ever!!");
             //change box to blue
             other.GetComponent<SpriteRenderer>().color = Color.blue;
+            sfxSource.Play();
             //enable particle emissions
             //var em = other.GetComponent<ParticleSystem>().emission;
             //em.enabled = true;
