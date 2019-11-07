@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position + change , change, distance);
 		
-        if(hit.collider != null && hit.collider.gameObject.tag == "Pushable" && Input.GetKeyDown(KeyCode.RightShift))
+        if(hit.collider != null && hit.collider.gameObject.tag == "Pushable" && Input.GetButtonDown("interact"))
 		{
             box = hit.collider.gameObject;
             Destroy(box.GetComponent<FixedJoint2D>());
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour {
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             box.GetComponent<FixedJoint2D>().breakForce = Mathf.Infinity;
             box.GetComponent<FixedJoint2D>().enabled = true;
-		}else if(Input.GetKeyUp(KeyCode.RightShift))
+		}else if(Input.GetButtonUp("interact"))
         {
             //box.GetComponent<FixedJoint2D>().enabled = false;
             //box.GetComponent<boxpull>().beingPushed = false;
