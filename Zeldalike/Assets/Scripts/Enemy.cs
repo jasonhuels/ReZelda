@@ -74,8 +74,8 @@ public class Enemy : MonoBehaviour
     var m = ps.main;
     
     //set colors
-    m.startColor = Color.red;
-    m.startSize = 0.1f;
+    m.startColor = Color.green;
+    m.startSize = 0.5f;
     m.loop = false;
     m.duration = 1f;
     m.simulationSpace = ParticleSystemSimulationSpace.World;
