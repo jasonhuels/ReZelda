@@ -12,7 +12,7 @@ This game is a small demo of a concept conceived during C# Team Week. The origin
 ## Setup/Installation Requirements
 - Minimum version of compatible web browsers: Chrome4.0, Internet Explorer	9.0, Mozilla Firefox	2.0, Safari	3.1, Opera	9.0
 
-Please visit [website](website) to play the game!
+Please visit [ReZeldaDemoBuild](http://stockampj.github.io/ReZeldaDemoBuild) to play the game!
 
 ## Known Bugs
 
