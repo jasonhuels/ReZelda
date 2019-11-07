@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     public bool dying;
     public AudioClip sfxClip;
     public AudioSource sfxSource;
+    public FloatValue playerHealth;
     
 
   public ParticleSystem ps;
@@ -104,4 +105,12 @@ public class Enemy : MonoBehaviour
 
     
   }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            playerHealth.RunTimeValue -= 1;
+        }
+    }
 }
