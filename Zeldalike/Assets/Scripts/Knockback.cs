@@ -13,6 +13,7 @@ public class Knockback : MonoBehaviour
   {
     if (other.gameObject.CompareTag("Enemy"))
     {
+
       Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
       ps = other.GetComponent<ParticleSystem>();
       if (enemy != null)
@@ -29,6 +30,7 @@ public class Knockback : MonoBehaviour
 
         StartCoroutine(KnockCo(enemy));
       }
+
     }
   }
 

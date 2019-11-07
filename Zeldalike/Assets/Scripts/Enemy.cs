@@ -13,38 +13,43 @@ public enum EnemyState
 
 public class Enemy : MonoBehaviour
 {
-  public EnemyState currentState;
-  public int health;
-  public string enemyName;
-  public int baseAttack;
-  public float moveSpeed;
-  public bool dying;
 
-  ParticleSystem ps;
+    public EnemyState currentState;
+    public int health;
+    public string enemyName;
+    public int baseAttack;
+    public float moveSpeed;
+    public bool dying;
+    public AudioClip sfxClip;
+    public AudioSource sfxSource;
+    
 
-  ParticleSystemRenderer psr;
+  public ParticleSystem ps;
+
+  public ParticleSystemRenderer psr;
 
   // Start is called before the first frame update
-  public void Awake()
+   void Awake()
   {
     CreateEnemyDeathParticleSystem(gameObject);
     ps = gameObject.GetComponent<ParticleSystem>();
     psr = gameObject.GetComponent<ParticleSystemRenderer>();
   }
-  public void Start()
+   void Start()
   {
+    sfxSource.clip = sfxClip;
     dying = false;
     
   }
 
   // Update is called once per frame
-  public void Update()
+   void Update()
   {
     if (dying)
     {
       Debug.Log(ps.isPlaying);
+      sfxSource.Play();
       StartCoroutine(DieCo());
-      
     }
   }
 
